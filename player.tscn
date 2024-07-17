@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnqjadjtimi1p"]
+[gd_scene load_steps=5 format=3 uid="uid://cnqjadjtimi1p"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8gny3"]
 
@@ -9,19 +9,11 @@ size = Vector2(10.5, 18.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3y126"]
 
-[sub_resource type="Animation" id="Animation_bt2in"]
-resource_name = "new_animation"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8537k"]
-_data = {
-"new_animation": SubResource("Animation_bt2in")
-}
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8gny3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
+position = Vector2(-1.19209e-07, -1.19209e-06)
 scale = Vector2(12, 20)
 texture = SubResource("PlaceholderTexture2D_4p22r")
 
@@ -32,7 +24,5 @@ debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3y126")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_8537k")
-}
+[node name="targetright" type="Marker2D" parent="."]
+position = Vector2(11, 0)
