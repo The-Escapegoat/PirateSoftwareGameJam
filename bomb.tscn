@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6ht5r87s2xqn"]
+[gd_scene load_steps=3 format=3 uid="uid://c6ht5r87s2xqn"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxaio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugidt"]
+size = Vector2(2.25, 2.25)
 
 [node name="bomb" type="CharacterBody2D"]
 
@@ -10,5 +13,6 @@ scale = Vector2(2.5, 2.5)
 texture = SubResource("PlaceholderTexture2D_yxaio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ugidt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

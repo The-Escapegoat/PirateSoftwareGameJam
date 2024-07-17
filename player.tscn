@@ -5,7 +5,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4p22r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
-size = Vector2(12, 20)
+size = Vector2(10.5, 18.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3y126"]
 
