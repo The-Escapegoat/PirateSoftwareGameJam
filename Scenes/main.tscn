@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://deguxpsm7p5mp"]
 
-[ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://player.tscn" id="1_b7er3"]
-[ext_resource type="PackedScene" uid="uid://c6ht5r87s2xqn" path="res://bomb.tscn" id="2_lf2bh"]
+[ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
+[ext_resource type="PackedScene" uid="uid://c6ht5r87s2xqn" path="res://Scenes/bomb.tscn" id="2_2o8q2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwg1u"]
 distance = -60.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_b7er3")]
+[node name="Player" parent="." instance=ExtResource("1_seww4")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -17,5 +17,5 @@ distance = -60.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_vwg1u")
 
-[node name="bomb" parent="." instance=ExtResource("2_lf2bh")]
+[node name="bomb" parent="." instance=ExtResource("2_2o8q2")]
 position = Vector2(15, -7)
