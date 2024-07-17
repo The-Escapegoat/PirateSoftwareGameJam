@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6ht5r87s2xqn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxaio"]
+
+[node name="bomb" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, -5.96046e-08)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("PlaceholderTexture2D_yxaio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
