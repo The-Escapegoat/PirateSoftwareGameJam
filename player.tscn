@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnqjadjtimi1p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4p22r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
+size = Vector2(12, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3y126"]
+
+[sub_resource type="Animation" id="Animation_bt2in"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8537k"]
+_data = {
+"new_animation": SubResource("Animation_bt2in")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(12, 20)
+texture = SubResource("PlaceholderTexture2D_4p22r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j761n")
+debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3y126")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_8537k")
+}
