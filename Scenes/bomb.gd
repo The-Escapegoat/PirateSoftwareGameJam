@@ -6,7 +6,7 @@ var launching : bool = false
 var launch_direction : Vector2
 var can_fall : bool
 @export var weight : int
-
+#pls work
 @onready var HangTimer = $HangTime
 
 func launch(direction : Vector2):

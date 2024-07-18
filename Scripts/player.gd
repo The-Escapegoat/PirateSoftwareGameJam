@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#pls work
 
 const SPEED = 200.0
 const ACCELERATION = 1400.0

@@ -289,8 +289,6 @@ debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3y126")
 animation = &"shootUpSide"
-frame = 3
-frame_progress = 1.0
 
 [node name="SidePoint" type="Marker2D" parent="."]
 position = Vector2(18, 0)
