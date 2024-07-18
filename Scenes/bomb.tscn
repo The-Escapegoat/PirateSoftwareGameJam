@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6ht5r87s2xqn"]
+[gd_scene load_steps=4 format=3 uid="uid://c6ht5r87s2xqn"]
+
+[ext_resource type="Script" path="res://Scenes/bomb.gd" id="1_2fn64"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxaio"]
 
@@ -6,6 +8,7 @@
 size = Vector2(2.125, 2.125)
 
 [node name="bomb" type="CharacterBody2D"]
+script = ExtResource("1_2fn64")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 2)

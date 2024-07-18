@@ -11,9 +11,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyotye_jump_timer = $CoyoteJumpTimer
+@onready var bomb = preload("res://Scenes/bomb.tscn")
 
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("Shoot"):
+		var bomb_temp = bomb.instantiate()
+		bomb_temp.direction = 1
+		add_child(bomb_temp)
 	apply_gravity(delta)
 	handle_jump()
 	var input_axis = Input.get_axis("Left", "Right")
@@ -54,3 +59,4 @@ func update_animations(input_axis):
 		animated_sprite_2d.play("idle")
 	if not is_on_floor():
 		animated_sprite_2d.play("jump")
+
