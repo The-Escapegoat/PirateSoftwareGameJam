@@ -3,16 +3,17 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxaio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugidt"]
-size = Vector2(2.25, 2.25)
+size = Vector2(2.125, 2.125)
 
 [node name="bomb" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5.96046e-08, -5.96046e-08)
+position = Vector2(2, 2)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("PlaceholderTexture2D_yxaio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0625, 0.0625)
 shape = SubResource("RectangleShape2D_ugidt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -18,4 +18,4 @@ distance = -60.0
 shape = SubResource("WorldBoundaryShape2D_vwg1u")
 
 [node name="bomb" parent="." instance=ExtResource("2_2o8q2")]
-position = Vector2(15, -7)
+position = Vector2(43, 6)
