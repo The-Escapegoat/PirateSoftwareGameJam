@@ -59,7 +59,9 @@ func shoot():
 	self.velocity += -bomb_direction * player_launch_amount
 
 func select_point():
-	var input_vector : Vector2 = Vector2(roundi(Input.get_axis("Left", "Right")), roundi(Input.get_axis("Up", "Down")))
+	var input_vector : Vector2 = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down"))
+	roundi(input_vector.x)
+	roundi(input_vector.y)
 	input_vector = input_vector.normalized()
 	if(!is_shooting):
 		if(input_vector == Vector2.ZERO or (input_vector.y == 0 and input_vector.x != 0)):
