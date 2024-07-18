@@ -16,9 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("Shoot"):
-		var bomb_temp = bomb.instantiate()
-		bomb_temp.direction = 1
-		add_child(bomb_temp)
+		owner.add_child(bomb.instantiate())
 	apply_gravity(delta)
 	handle_jump()
 	var input_axis = Input.get_axis("Left", "Right")
