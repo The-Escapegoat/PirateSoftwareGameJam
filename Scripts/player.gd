@@ -40,6 +40,7 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
 	var input_axis = Input.get_axis("Left", "Right")
+	input_axis = roundi(input_axis)
 	handle_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
 	update_animations(input_axis)
@@ -58,7 +59,7 @@ func shoot():
 	self.velocity += -bomb_direction * player_launch_amount
 
 func select_point():
-	var input_vector : Vector2 = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down"))
+	var input_vector : Vector2 = Vector2(roundi(Input.get_axis("Left", "Right")), roundi(Input.get_axis("Up", "Down")))
 	input_vector = input_vector.normalized()
 	if(!is_shooting):
 		if(input_vector == Vector2.ZERO or (input_vector.y == 0 and input_vector.x != 0)):
