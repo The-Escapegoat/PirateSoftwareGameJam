@@ -271,15 +271,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("side_point", "up_point", "up_side_point", "down_side_point", "down_point")]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8gny3")
-player_launch_amount = 200
-side_point = NodePath("SidePoint")
-up_point = NodePath("UpPoint")
-up_side_point = NodePath("UpSidePoint")
-down_side_point = NodePath("DownSidePoint")
-down_point = NodePath("DownPoint")
-launch_power = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

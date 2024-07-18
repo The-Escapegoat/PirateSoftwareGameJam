@@ -9,6 +9,7 @@ size = Vector2(2.125, 2.125)
 
 [node name="bomb" type="CharacterBody2D"]
 script = ExtResource("1_2fn64")
+weight = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 2)
@@ -20,3 +21,7 @@ position = Vector2(0.0625, 0.0625)
 shape = SubResource("RectangleShape2D_ugidt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HangTime" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
