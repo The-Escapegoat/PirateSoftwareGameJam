@@ -271,7 +271,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("side_point", "up_point", "up_side_point", "down_side_point", "down_point")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("side_point", "up_point", "up_side_point", "down_side_point", "down_point") groups=["Player"]]
 script = ExtResource("1_8gny3")
 player_launch_amount = 200
 side_point = NodePath("SidePoint")

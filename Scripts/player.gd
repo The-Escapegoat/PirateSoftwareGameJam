@@ -127,5 +127,8 @@ func update_animations(input_axis):
 		animated_sprite_2d.play(shoot_name)
 		await animated_sprite_2d.animation_finished
 		is_shooting = false
+		
+func launch_player():
+	print("launched player")
 
 

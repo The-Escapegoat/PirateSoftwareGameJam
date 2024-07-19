@@ -1,27 +1,133 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6ht5r87s2xqn"]
+[gd_scene load_steps=18 format=3 uid="uid://c6ht5r87s2xqn"]
 
 [ext_resource type="Script" path="res://Scenes/bomb.gd" id="1_2fn64"]
+[ext_resource type="Texture2D" uid="uid://bqvrcwq6sf46w" path="res://Sprites/Bomb.png" id="2_ns3o1"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxaio"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ekthr"]
+radius = 3.938
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugidt"]
-size = Vector2(2.125, 2.125)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj00c"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pr3a"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciqb0"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnr83"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fu8a"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6j8n"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h575j"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0dck"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8gbe"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqwna"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wibdg"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nljsh"]
+atlas = ExtResource("2_ns3o1")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bd1e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj00c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pr3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciqb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnr83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fu8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6j8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h575j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0dck")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8gbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqwna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wibdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nljsh")
+}],
+"loop": true,
+"name": &"midair",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itp1l"]
+radius = 27.0185
 
 [node name="bomb" type="CharacterBody2D"]
 script = ExtResource("1_2fn64")
 weight = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 2)
-scale = Vector2(2.5, 2.5)
-texture = SubResource("PlaceholderTexture2D_yxaio")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.0625, 0.0625)
-shape = SubResource("RectangleShape2D_ugidt")
+shape = SubResource("CircleShape2D_ekthr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bd1e6")
+animation = &"explosion"
+frame = 7
+frame_progress = 1.0
 
 [node name="HangTime" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_itp1l")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
