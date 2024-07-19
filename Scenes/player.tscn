@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8q3g8xdwwjwv" path="res://Sprites/Player.png" id="2_4375n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
-size = Vector2(14, 29)
+size = Vector2(14, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wijws"]
 atlas = ExtResource("2_4375n")
@@ -272,6 +272,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("side_point", "up_point", "up_side_point", "down_side_point", "down_point") groups=["Player"]]
+collision_layer = 18
 script = ExtResource("1_8gny3")
 player_launch_amount = 200
 side_point = NodePath("SidePoint")
@@ -280,9 +281,10 @@ up_side_point = NodePath("UpSidePoint")
 down_side_point = NodePath("DownSidePoint")
 down_point = NodePath("DownPoint")
 launch_power = 300
+explosion_power = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j761n")
 debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
 
@@ -308,3 +310,18 @@ position = Vector2(0, 13)
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="JumpBuffer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ShootBuffer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
+[connection signal="timeout" from="ShootBuffer" to="." method="_on_shoot_buffer_timeout"]

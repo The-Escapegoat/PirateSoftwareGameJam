@@ -21,12 +21,3 @@ position = Vector2(48, 96)
 
 [node name="Room2" parent="." instance=ExtResource("3_gkway")]
 position = Vector2(48, 416)
-
-[node name="Room3" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(688, 96)
-
-[node name="Room4" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(48, -224)
-
-[node name="Room5" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(-592, 96)
