@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://deguxpsm7p5mp"]
+[gd_scene load_steps=7 format=3 uid="uid://deguxpsm7p5mp"]
 
 [ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
 [ext_resource type="Script" path="res://Scenes/GameManager.gd" id="1_vm2xi"]
 [ext_resource type="PackedScene" uid="uid://bxtr7myh24vs3" path="res://Scenes/Rooms/room_1.tscn" id="3_gkway"]
+[ext_resource type="PackedScene" uid="uid://uwo2u2s1jwdu" path="res://Scenes/room_2.tscn" id="5_20pl6"]
+[ext_resource type="PackedScene" uid="uid://cjp8y7s3vuwwm" path="res://Scenes/room_3.tscn" id="6_ync7y"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_vm2xi")
@@ -30,3 +32,9 @@ position = Vector2(48, -224)
 
 [node name="Room5" parent="." instance=ExtResource("3_gkway")]
 position = Vector2(-592, 96)
+
+[node name="Room6" parent="." instance=ExtResource("5_20pl6")]
+position = Vector2(1328, 96)
+
+[node name="Room7" parent="." instance=ExtResource("6_ync7y")]
+position = Vector2(1328, -224)
