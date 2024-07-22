@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://deguxpsm7p5mp"]
+
+[ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_vm2xi"]
+[ext_resource type="PackedScene" uid="uid://bxtr7myh24vs3" path="res://Scenes/Rooms/room_1.tscn" id="3_gkway"]
+[ext_resource type="PackedScene" uid="uid://uwo2u2s1jwdu" path="res://Scenes/Rooms/room_2.tscn" id="5_20pl6"]
+[ext_resource type="PackedScene" uid="uid://cjp8y7s3vuwwm" path="res://Scenes/Rooms/room_3.tscn" id="6_ync7y"]
+[ext_resource type="PackedScene" uid="uid://cr0bge3f66e5u" path="res://Scenes/Rooms/room_4.tscn" id="7_u24km"]
+[ext_resource type="PackedScene" uid="uid://n61m5csoi6m5" path="res://Scenes/checkpoint.tscn" id="8_1750k"]
+[ext_resource type="PackedScene" uid="uid://dh11f3xhhe0ug" path="res://Scenes/Rooms/room_5.tscn" id="9_timak"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("current_room")]
+script = ExtResource("1_vm2xi")
+current_room = NodePath("Room1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("1_tm3k2")
+
+[node name="Player" parent="." instance=ExtResource("1_seww4")]
+position = Vector2(40, 96)
+
+[node name="Room1" parent="." groups=["room"] instance=ExtResource("3_gkway")]
+position = Vector2(48, 96)
+
+[node name="Room2" parent="." groups=["room"] instance=ExtResource("5_20pl6")]
+position = Vector2(688, 96)
+
+[node name="Room3" parent="." groups=["room"] instance=ExtResource("6_ync7y")]
+position = Vector2(688, -224)
+
+[node name="Room4" parent="." groups=["room"] instance=ExtResource("7_u24km")]
+position = Vector2(1328, -224)
+
+[node name="Room5" parent="." groups=["room"] instance=ExtResource("9_timak")]
+position = Vector2(1968, -224)
+
+[node name="Checkpoint" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(984, -376)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(1560, -304)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(1648, -272)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2184, -272)

@@ -8,7 +8,7 @@ var player
 func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0]
 	stored_room = owner.current_room	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if stored_room != owner.current_room and !transitioning:
 		transitioning = true
 		if(stored_room.global_position.y > owner.current_room.position.y and transitioning == true):
@@ -24,4 +24,7 @@ func change_rooms():
 	stored_room = owner.current_room	
 	target_position = owner.current_room.camera_point.global_position
 	transitioning = false
+	for i in owner.rooms:
+		i.check_load_state()
+	
 	

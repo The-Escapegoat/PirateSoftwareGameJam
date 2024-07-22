@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const ACCELERATION = 1400.0
-const FRICTION = 1400.0
+const FRICTION = 1800.0
 const JUMP_VELOCITY = -300.0
 
 @export var player_launch_amount = 300
@@ -27,6 +27,8 @@ var bomb_direction : Vector2
 @export var explosion_power : int
 var selected_point : Marker2D
 
+var current_checkpoint : Vector2
+
 var is_shooting : bool
 
 var can_move : bool = true
@@ -44,29 +46,30 @@ var shoot_buffered : bool = false
 
 
 func _physics_process(delta):
-	select_point()
-	if(cooldown.time_left == 0):
-		can_shoot = true
-		
-	if (Input.is_action_just_pressed("Shoot") or shoot_buffered) and can_shoot:
-		shoot()
-	elif Input.is_action_just_pressed("Shoot") and !can_shoot:
-		shoot_buffered = true
-		shoot_buffer_timer.start()
-		
-	apply_gravity(delta)
-	handle_jump()
-	var input_axis = Input.get_axis("Left", "Right")
-	input_axis = roundi(input_axis)
-	handle_acceleration(input_axis, delta)
-	apply_friction(input_axis, delta)
-	update_animations(input_axis)
-	var was_on_floor = is_on_floor()
-	if (can_move):
-		move_and_slide()
-	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
-	if just_left_ledge:
-		coyotye_jump_timer.start()
+	if(can_move):
+		select_point()
+		if(cooldown.time_left == 0):
+			can_shoot = true
+			
+		if (Input.is_action_just_pressed("Shoot") or shoot_buffered) and can_shoot:
+			shoot()
+		elif Input.is_action_just_pressed("Shoot") and !can_shoot:
+			shoot_buffered = true
+			shoot_buffer_timer.start()
+			
+		apply_gravity(delta)
+		handle_jump()
+		var input_axis = Input.get_axis("Left", "Right")
+		input_axis = roundi(input_axis)
+		handle_acceleration(input_axis, delta)
+		apply_friction(input_axis, delta)
+		update_animations(input_axis)
+		var was_on_floor = is_on_floor()
+		if (can_move):
+			move_and_slide()
+		var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
+		if just_left_ledge:
+			coyotye_jump_timer.start()
 		
 func shoot():
 	can_shoot = false
@@ -132,7 +135,7 @@ func handle_acceleration(input_axis, delta):
 		velocity.x = move_toward(velocity.x, SPEED * input_axis, ACCELERATION * delta)
 		
 func update_animations(input_axis):
-	if(!is_shooting):
+	if(!is_shooting and can_move):
 		if input_axis == -facing_direction:
 			self.scale.x *= -1
 			facing_direction *= -1
@@ -161,3 +164,11 @@ func _on_shoot_buffer_timeout():
 	
 func _on_jump_buffer_timeout():
 	jump_buffered = false
+	
+func death():
+	velocity = Vector2.ZERO
+	can_move = false
+	animated_sprite_2d.play("death")
+	await animated_sprite_2d.animation_finished
+	self.global_position = current_checkpoint
+	can_move = true

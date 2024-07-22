@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://deguxpsm7p5mp"]
+[gd_scene load_steps=14 format=3 uid="uid://deguxpsm7p5mp"]
 
 [ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
-[ext_resource type="Script" path="res://Scenes/GameManager.gd" id="1_vm2xi"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_vm2xi"]
 [ext_resource type="PackedScene" uid="uid://bxtr7myh24vs3" path="res://Scenes/Rooms/room_1.tscn" id="3_gkway"]
-[ext_resource type="PackedScene" uid="uid://uwo2u2s1jwdu" path="res://Scenes/room_2.tscn" id="5_20pl6"]
-[ext_resource type="PackedScene" uid="uid://cjp8y7s3vuwwm" path="res://Scenes/room_3.tscn" id="6_ync7y"]
+[ext_resource type="PackedScene" uid="uid://uwo2u2s1jwdu" path="res://Scenes/Rooms/room_2.tscn" id="5_20pl6"]
+[ext_resource type="PackedScene" uid="uid://cjp8y7s3vuwwm" path="res://Scenes/Rooms/room_3.tscn" id="6_ync7y"]
+[ext_resource type="PackedScene" uid="uid://cr0bge3f66e5u" path="res://Scenes/Rooms/room_4.tscn" id="7_u24km"]
+[ext_resource type="PackedScene" uid="uid://n61m5csoi6m5" path="res://Scenes/checkpoint.tscn" id="8_1750k"]
+[ext_resource type="PackedScene" uid="uid://dxvt0vvmg7o02" path="res://Scenes/Rooms/room_6.tscn" id="9_5t3v0"]
+[ext_resource type="PackedScene" uid="uid://dh11f3xhhe0ug" path="res://Scenes/Rooms/room_5.tscn" id="9_timak"]
+[ext_resource type="PackedScene" uid="uid://4yk4mrtdau3u" path="res://Scenes/Rooms/room_7.tscn" id="11_xvlq4"]
+[ext_resource type="PackedScene" uid="uid://ba1pi7vhoyj5p" path="res://Scenes/Rooms/room_8.tscn" id="12_1mqrs"]
+[ext_resource type="PackedScene" uid="uid://dgtqlykbdrors" path="res://Scenes/Rooms/room_9.tscn" id="13_li2cp"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_vm2xi")
@@ -16,25 +23,70 @@ position_smoothing_enabled = true
 script = ExtResource("1_tm3k2")
 
 [node name="Player" parent="." instance=ExtResource("1_seww4")]
-position = Vector2(16, 80)
+position = Vector2(-256, 56)
 
-[node name="Room1" parent="." instance=ExtResource("3_gkway")]
+[node name="Checkpoint" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(984, -376)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(1560, -304)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(1648, -272)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2184, -272)
+
+[node name="Checkpoint5" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2000, -544)
+
+[node name="Checkpoint6" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2368, -576)
+
+[node name="Checkpoint7" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2664, -720)
+
+[node name="Checkpoint8" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2296, -272)
+
+[node name="Checkpoint9" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2368, -440)
+
+[node name="Checkpoint10" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2320, -736)
+
+[node name="Checkpoint11" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2360, -1080)
+
+[node name="Checkpoint12" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2480, -848)
+
+[node name="Checkpoint13" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(2576, -848)
+
+[node name="Room1" parent="." groups=["room"] instance=ExtResource("3_gkway")]
 position = Vector2(48, 96)
 
-[node name="Room2" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(48, 416)
-
-[node name="Room3" parent="." instance=ExtResource("3_gkway")]
+[node name="Room2" parent="." groups=["room"] instance=ExtResource("5_20pl6")]
 position = Vector2(688, 96)
 
-[node name="Room4" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(48, -224)
+[node name="Room3" parent="." groups=["room"] instance=ExtResource("6_ync7y")]
+position = Vector2(688, -224)
 
-[node name="Room5" parent="." instance=ExtResource("3_gkway")]
-position = Vector2(-592, 96)
-
-[node name="Room6" parent="." instance=ExtResource("5_20pl6")]
-position = Vector2(1328, 96)
-
-[node name="Room7" parent="." instance=ExtResource("6_ync7y")]
+[node name="Room4" parent="." groups=["room"] instance=ExtResource("7_u24km")]
 position = Vector2(1328, -224)
+
+[node name="Room5" parent="." groups=["room"] instance=ExtResource("9_timak")]
+position = Vector2(1968, -224)
+
+[node name="Room6" parent="." instance=ExtResource("9_5t3v0")]
+position = Vector2(1968, -544)
+
+[node name="Room7" parent="." instance=ExtResource("11_xvlq4")]
+position = Vector2(2608, -224)
+
+[node name="Room8" parent="." instance=ExtResource("12_1mqrs")]
+position = Vector2(2608, -544)
+
+[node name="Room9" parent="." instance=ExtResource("13_li2cp")]
+position = Vector2(2608, -864)

@@ -1,10 +1,42 @@
-[gd_scene load_steps=36 format=3 uid="uid://cnqjadjtimi1p"]
+[gd_scene load_steps=44 format=3 uid="uid://cnqjadjtimi1p"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8gny3"]
 [ext_resource type="Texture2D" uid="uid://b8q3g8xdwwjwv" path="res://Sprites/Player.png" id="2_4375n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
 size = Vector2(14, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwhsu"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2048, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_278y8"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2112, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ry6"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2176, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m1ki"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2240, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oje5j"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2304, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssosp"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2368, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aqur"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2432, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmfny"]
+atlas = ExtResource("2_4375n")
+region = Rect2(2496, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wijws"]
 atlas = ExtResource("2_4375n")
@@ -132,6 +164,35 @@ region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3y126"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwhsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_278y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7ry6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m1ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oje5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssosp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aqur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmfny")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wijws")
@@ -290,7 +351,8 @@ debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3y126")
-animation = &"shootUpSide"
+animation = &"death"
+frame_progress = 0.289775
 
 [node name="SidePoint" type="Marker2D" parent="."]
 position = Vector2(18, 0)
