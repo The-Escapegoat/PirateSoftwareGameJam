@@ -4,6 +4,7 @@ extends Node2D
 @export var rooms : Array
 
 var jam_count : int = 0
+var deaths : int = 0
 var time : float = 0.0
 var msec : int = 0
 var sec : int = 0
@@ -36,6 +37,7 @@ func win():
 	var b = win_scene.instantiate()
 	b.position = Vector2.ZERO
 	add_child(b)
+	b.deaths = deaths
 	b.time = time
 	b.jam_count = jam_count
 	b.win()

@@ -168,6 +168,7 @@ func _on_jump_buffer_timeout():
 	
 func death():
 	velocity = Vector2.ZERO
+	owner.deaths += 1
 	can_move = false
 	animated_sprite_2d.play("death")
 	await animated_sprite_2d.animation_finished
