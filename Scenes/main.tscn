@@ -30,7 +30,7 @@ current_room = NodePath("Room1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_tm3k2")
-speed = 1500
+speed = 1100
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 z_index = -10

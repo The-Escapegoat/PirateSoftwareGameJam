@@ -17,11 +17,9 @@ var temp
 
 func _ready():
 	temp = jam_count
-	print(jam_count)
 
 func _process(delta):
 	if temp != jam_count:
-		print(jam_count)
 		temp = jam_count
 	if(!has_won):
 		time += delta

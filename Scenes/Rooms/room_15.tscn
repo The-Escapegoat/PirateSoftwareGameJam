@@ -12,15 +12,15 @@ texture = ExtResource("2_hird4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
@@ -121,26 +121,26 @@ position = Vector2(-48, -96)
 [node name="GameJam" parent="." instance=ExtResource("6_qvhdv")]
 position = Vector2(-64, -216)
 
-[connection signal="body_entered" from="TileMap/Spike" to="TileMap/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48422" to="TileMap/@Area2D@48422" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48423" to="TileMap/@Area2D@48423" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48424" to="TileMap/@Area2D@48424" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48436" to="TileMap/@Area2D@48436" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48437" to="TileMap/@Area2D@48437" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48438" to="TileMap/@Area2D@48438" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48439" to="TileMap/@Area2D@48439" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48440" to="TileMap/@Area2D@48440" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48441" to="TileMap/@Area2D@48441" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48442" to="TileMap/@Area2D@48442" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48443" to="TileMap/@Area2D@48443" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48444" to="TileMap/@Area2D@48444" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48445" to="TileMap/@Area2D@48445" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48446" to="TileMap/@Area2D@48446" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48447" to="TileMap/@Area2D@48447" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48448" to="TileMap/@Area2D@48448" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48449" to="TileMap/@Area2D@48449" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48450" to="TileMap/@Area2D@48450" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48451" to="TileMap/@Area2D@48451" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48452" to="TileMap/@Area2D@48452" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@48453" to="TileMap/@Area2D@48453" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41542" to="TileMap/@Area2D@41542" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41543" to="TileMap/@Area2D@41543" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41544" to="TileMap/@Area2D@41544" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41545" to="TileMap/@Area2D@41545" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41558" to="TileMap/@Area2D@41558" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41559" to="TileMap/@Area2D@41559" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41560" to="TileMap/@Area2D@41560" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41561" to="TileMap/@Area2D@41561" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41562" to="TileMap/@Area2D@41562" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41563" to="TileMap/@Area2D@41563" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41564" to="TileMap/@Area2D@41564" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41565" to="TileMap/@Area2D@41565" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41566" to="TileMap/@Area2D@41566" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41567" to="TileMap/@Area2D@41567" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41568" to="TileMap/@Area2D@41568" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41569" to="TileMap/@Area2D@41569" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41570" to="TileMap/@Area2D@41570" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41571" to="TileMap/@Area2D@41571" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41572" to="TileMap/@Area2D@41572" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41573" to="TileMap/@Area2D@41573" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41574" to="TileMap/@Area2D@41574" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@41575" to="TileMap/@Area2D@41575" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -24,12 +24,10 @@ func check_load_state():
 func unload_room():
 	self.process_mode = 4
 	self.hide()
-	print("unloaded ", self.name)
 	
 func reload_room():
 	self.process_mode = 0
 	self.show()
-	print("loaded ", self.name)
 
 
 func _on_area_2d_body_entered(_body):
