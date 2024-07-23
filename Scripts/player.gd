@@ -74,6 +74,7 @@ func _physics_process(delta):
 func shoot():
 	can_shoot = false
 	cooldown.start()
+	velocity.y -= velocity.y/2
 	is_shooting = true
 	var b = bomb.instantiate()
 	b.position = selected_point.global_position
@@ -123,7 +124,7 @@ func handle_jump():
 		if Input.is_action_just_pressed("Jump") or jump_buffered:
 			velocity.y = JUMP_VELOCITY
 	if not is_on_floor():
-		if Input.is_action_just_released("Jump") and velocity.y < JUMP_VELOCITY/2:
+		if Input.is_action_just_released("Jump") and velocity.y < JUMP_VELOCITY/2 and !is_shooting:
 			velocity.y = JUMP_VELOCITY/2
 			
 func apply_friction(input_axis, delta):

@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv8aqicvnbmrc"]
+
+[ext_resource type="Script" path="res://Scenes/win_screen.gd" id="1_o0j4a"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o0j4a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 160)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 56.0
+text = "Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 208.0
+offset_right = 272.0
+offset_bottom = 264.0
+text = "Game Jam Collected:"
+vertical_alignment = 1
+
+[node name="Jam" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 208.0
+offset_right = 208.0
+offset_bottom = 264.0
+text = "0"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 272.0
+offset_bottom = 320.0
+text = "Time:"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 264.0
+offset_right = 72.0
+offset_bottom = 320.0
+text = "00:00.000"
+vertical_alignment = 1

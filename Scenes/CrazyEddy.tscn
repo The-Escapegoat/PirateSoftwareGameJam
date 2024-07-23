@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://boxi2k28r5nw6"]
+
+[ext_resource type="Texture2D" uid="uid://c7gmh7eqsdeq" path="res://Sprites/SpectralTile.png" id="1_4lv0w"]
+[ext_resource type="Script" path="res://Scripts/CrazyEddy.gd" id="1_vjgq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cawvf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aou6k"]
+size = Vector2(32, 32)
+
+[node name="CrazyEddy" type="StaticBody2D"]
+script = ExtResource("1_vjgq7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4lv0w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cawvf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_aou6k")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

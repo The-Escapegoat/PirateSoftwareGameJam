@@ -119,4 +119,7 @@ position = Vector2(-48, -96)
 [node name="GameJam" parent="." instance=ExtResource("5_ck28k")]
 position = Vector2(112, -184)
 
+[node name="GameJam2" parent="." instance=ExtResource("5_ck28k")]
+position = Vector2(-208, -192)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -32,7 +32,7 @@ position_smoothing_enabled = true
 script = ExtResource("1_tm3k2")
 
 [node name="Player" parent="." instance=ExtResource("1_seww4")]
-position = Vector2(-256, 64)
+position = Vector2(5144, -376)
 
 [node name="Checkpoint" parent="." instance=ExtResource("8_1750k")]
 position = Vector2(984, -376)
