@@ -1,6 +1,7 @@
 extends Camera2D
 
 var stored_room : Room
+@export var speed: int
 var target_position
 var transitioning : bool = false
 var player
@@ -8,7 +9,7 @@ var player
 func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0]
 	stored_room = owner.current_room	
-func _physics_process(_delta):
+func _physics_process(delta):
 	if stored_room != owner.current_room and !transitioning:
 		transitioning = true
 		if(stored_room.global_position.y > owner.current_room.position.y and transitioning == true):
@@ -18,7 +19,8 @@ func _physics_process(_delta):
 			player.gravity = player.gravity * 2
 		change_rooms()
 	if(target_position != null):
-		self.global_position = target_position
+		global_position.x = move_toward(global_position.x, target_position.x, speed * delta)
+		global_position.y = move_toward(global_position.y, target_position.y, speed * delta)
 
 func change_rooms():
 	stored_room = owner.current_room	

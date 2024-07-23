@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://deguxpsm7p5mp"]
+[gd_scene load_steps=22 format=3 uid="uid://deguxpsm7p5mp"]
 
 [ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_vm2xi"]
 [ext_resource type="PackedScene" uid="uid://bxtr7myh24vs3" path="res://Scenes/Rooms/room_1.tscn" id="3_gkway"]
+[ext_resource type="Texture2D" uid="uid://cjnq28hrh7xtj" path="res://Sprites/Background.png" id="3_hrfjm"]
 [ext_resource type="PackedScene" uid="uid://uwo2u2s1jwdu" path="res://Scenes/Rooms/room_2.tscn" id="5_20pl6"]
 [ext_resource type="PackedScene" uid="uid://cjp8y7s3vuwwm" path="res://Scenes/Rooms/room_3.tscn" id="6_ync7y"]
 [ext_resource type="PackedScene" uid="uid://cr0bge3f66e5u" path="res://Scenes/Rooms/room_4.tscn" id="7_u24km"]
@@ -28,8 +29,12 @@ script = ExtResource("1_vm2xi")
 current_room = NodePath("Room1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
 script = ExtResource("1_tm3k2")
+speed = 1500
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -10
+texture = ExtResource("3_hrfjm")
 
 [node name="Player" parent="." instance=ExtResource("1_seww4")]
 position = Vector2(-256, 64)
