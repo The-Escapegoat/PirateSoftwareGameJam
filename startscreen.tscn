@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qfuxqlskwac"]
+
+[ext_resource type="Texture2D" uid="uid://8rsu5qbdmd4d" path="res://Sprites/SUPERHOLLOWCELESTESILKSONG3.png" id="1_wlsox"]
+
+[sub_resource type="GDScript" id="GDScript_sou6c"]
+resource_name = "startscreenbob"
+script/source = "extends Control
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/main.tscn\")
+
+
+
+func _on_button_3_pressed():
+	get_tree().quit()
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_sou6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 96)
+scale = Vector2(0.354, 0.354)
+texture = ExtResource("1_wlsox")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 291.0
+offset_top = 192.0
+offset_right = 346.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 276.0
+offset_top = 232.0
+offset_right = 361.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 20
+text = "Options"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 272.0
+offset_right = 376.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 20
+text = "Easy Mode
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
