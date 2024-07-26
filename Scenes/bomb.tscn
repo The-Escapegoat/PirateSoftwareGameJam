@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6ht5r87s2xqn"]
+[gd_scene load_steps=19 format=3 uid="uid://c6ht5r87s2xqn"]
 
 [ext_resource type="Script" path="res://Scripts/bomb.gd" id="1_fo80a"]
 [ext_resource type="Texture2D" uid="uid://bqvrcwq6sf46w" path="res://Sprites/Bomb.png" id="2_ns3o1"]
+[ext_resource type="AudioStream" uid="uid://lpsxg2gmb25f" path="res://Audio/Explosion.wav" id="3_l73cn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekthr"]
 radius = 3.938
@@ -125,6 +126,10 @@ frame_progress = 1.0
 [node name="HangTime" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="explosion_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l73cn")
+volume_db = -20.799
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 6

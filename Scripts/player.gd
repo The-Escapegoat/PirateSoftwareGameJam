@@ -148,7 +148,6 @@ func update_animations(input_axis):
 			
 		if (input_axis != 0):
 			animated_sprite_2d.play("run")
-			footsteps.play()
 			
 		else:
 			animated_sprite_2d.play("idle")

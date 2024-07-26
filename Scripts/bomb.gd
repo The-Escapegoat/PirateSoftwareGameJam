@@ -12,6 +12,7 @@ var exploded : bool
 @onready var HangTimer = $HangTime
 @onready var Sprite = $AnimatedSprite2D
 @onready var Collider = $CollisionShape2D
+@onready var explosion_sfx = $explosion_sfx
 
 
 func launch(direction : Vector2):
@@ -40,6 +41,7 @@ func explode():
 	Collider.disabled = true
 	velocity = Vector2.ZERO
 	Sprite.play("explosion")
+	explosion_sfx.play()
 	$Area2D/CollisionShape2D.disabled = false
 	await get_tree().create_timer(0.1).timeout
 	if($Area2D/CollisionShape2D != null):
