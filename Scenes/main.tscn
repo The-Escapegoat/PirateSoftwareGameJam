@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://deguxpsm7p5mp"]
+[gd_scene load_steps=24 format=3 uid="uid://deguxpsm7p5mp"]
 
 [ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://5nt7rbpqnq4" path="res://Scenes/Rooms/room_13.tscn" id="17_qrf30"]
 [ext_resource type="PackedScene" uid="uid://db2m5u8juur3s" path="res://Scenes/Rooms/room_14.tscn" id="18_o2ra8"]
 [ext_resource type="PackedScene" uid="uid://crxkab18bikkt" path="res://Scenes/Rooms/room_15.tscn" id="19_sgy1i"]
+[ext_resource type="Texture2D" uid="uid://d2oxis7av6i43" path="res://Sprites/Background-export.png" id="21_8hc1d"]
+[ext_resource type="Texture2D" uid="uid://dv1b7op223p81" path="res://Sprites/Props.png" id="22_8m26n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5xc8"]
 size = Vector2(32, 32)
@@ -31,10 +33,6 @@ current_room = NodePath("Room1")
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_tm3k2")
 speed = 1100
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-z_index = -10
-texture = ExtResource("3_hrfjm")
 
 [node name="Player" parent="." instance=ExtResource("1_seww4")]
 position = Vector2(-256, 64)
@@ -89,6 +87,9 @@ position = Vector2(3280, -1064)
 
 [node name="Checkpoint16" parent="." instance=ExtResource("8_1750k")]
 position = Vector2(3488, -912)
+
+[node name="Checkpoint28" parent="." instance=ExtResource("8_1750k")]
+position = Vector2(3584, -888)
 
 [node name="Checkpoint18" parent="." instance=ExtResource("8_1750k")]
 position = Vector2(3624, -1064)
@@ -171,5 +172,234 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_c5xc8")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(640, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -10
+texture = ExtResource("3_hrfjm")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+z_index = -10
+texture = ExtResource("21_8hc1d")
+centered = false
+
+[node name="Props" type="Sprite2D" parent="."]
+position = Vector2(4832, -304)
+texture = ExtResource("22_8m26n")
+hframes = 3
+
+[node name="Props2" type="Sprite2D" parent="."]
+position = Vector2(-160, 80)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props6" type="Sprite2D" parent="."]
+position = Vector2(896, 64)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props7" type="Sprite2D" parent="."]
+position = Vector2(472, 80)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props8" type="Sprite2D" parent="."]
+position = Vector2(792, -208)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props9" type="Sprite2D" parent="."]
+position = Vector2(488, -336)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props10" type="Sprite2D" parent="."]
+position = Vector2(1032, -272)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props11" type="Sprite2D" parent="."]
+position = Vector2(1568, -304)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props12" type="Sprite2D" parent="."]
+position = Vector2(1776, -240)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props13" type="Sprite2D" parent="."]
+position = Vector2(2000, -352)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props14" type="Sprite2D" parent="."]
+position = Vector2(1840, -528)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props15" type="Sprite2D" parent="."]
+position = Vector2(2752, -528)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props16" type="Sprite2D" parent="."]
+position = Vector2(2640, -384)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props17" type="Sprite2D" parent="."]
+position = Vector2(2536, -320)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props18" type="Sprite2D" parent="."]
+position = Vector2(2336, -848)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props19" type="Sprite2D" parent="."]
+position = Vector2(3272, -1072)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props20" type="Sprite2D" parent="."]
+position = Vector2(3560, -608)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props21" type="Sprite2D" parent="."]
+position = Vector2(4376, -640)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props22" type="Sprite2D" parent="."]
+position = Vector2(5048, -528)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props23" type="Sprite2D" parent="."]
+position = Vector2(5104, -256)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props24" type="Sprite2D" parent="."]
+position = Vector2(4944, -400)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props25" type="Sprite2D" parent="."]
+position = Vector2(5256, -528)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props26" type="Sprite2D" parent="."]
+position = Vector2(4744, -528)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props27" type="Sprite2D" parent="."]
+position = Vector2(4320, -768)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props28" type="Sprite2D" parent="."]
+position = Vector2(3872, -544)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props29" type="Sprite2D" parent="."]
+position = Vector2(3632, -1072)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props30" type="Sprite2D" parent="."]
+position = Vector2(3480, -912)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props31" type="Sprite2D" parent="."]
+position = Vector2(2920, -912)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props32" type="Sprite2D" parent="."]
+position = Vector2(2672, -1072)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props33" type="Sprite2D" parent="."]
+position = Vector2(2400, -576)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props34" type="Sprite2D" parent="."]
+position = Vector2(1872, -288)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props35" type="Sprite2D" parent="."]
+position = Vector2(2072, -544)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 2
+
+[node name="Props3" type="Sprite2D" parent="."]
+position = Vector2(-48, 112)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props5" type="Sprite2D" parent="."]
+position = Vector2(192, 48)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
+
+[node name="Props4" type="Sprite2D" parent="."]
+position = Vector2(-280, 48)
+texture = ExtResource("22_8m26n")
+hframes = 3
+frame = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

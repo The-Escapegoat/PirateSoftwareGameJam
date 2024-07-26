@@ -41,6 +41,7 @@ func explode():
 	Collider.disabled = true
 	velocity = Vector2.ZERO
 	Sprite.play("explosion")
+	explosion_sfx.pitch_scale = randf_range(1.0, 1.4)
 	explosion_sfx.play()
 	$Area2D/CollisionShape2D.disabled = false
 	await get_tree().create_timer(0.1).timeout

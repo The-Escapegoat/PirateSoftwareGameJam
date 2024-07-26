@@ -1,10 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://cnqjadjtimi1p"]
+[gd_scene load_steps=48 format=3 uid="uid://cnqjadjtimi1p"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8gny3"]
 [ext_resource type="Texture2D" uid="uid://b8q3g8xdwwjwv" path="res://Sprites/Player.png" id="2_4375n"]
 [ext_resource type="AudioStream" uid="uid://uqdlfvo2ypcx" path="res://Audio/Footsteps.wav" id="3_4chdr"]
 [ext_resource type="AudioStream" uid="uid://cuqhwwvvhv2t" path="res://Audio/Jump.wav" id="4_6w1l4"]
 [ext_resource type="AudioStream" uid="uid://bu1yxx7olj2tq" path="res://Audio/Death.wav" id="5_teysn"]
+[ext_resource type="AudioStream" uid="uid://dadkftcumk6xu" path="res://Audio/Piratesoftware.wav" id="6_5cq5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
 size = Vector2(14, 28)
@@ -353,9 +354,9 @@ shape = SubResource("RectangleShape2D_j761n")
 debug_color = Color(5.48691e-06, 0.589929, 0.754574, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_3y126")
-animation = &"death"
-frame_progress = 0.289775
+animation = &"run"
 
 [node name="SidePoint" type="Marker2D" parent="."]
 position = Vector2(18, 0)
@@ -390,18 +391,20 @@ one_shot = true
 
 [node name="footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4chdr")
-volume_db = -14.857
-pitch_scale = 0.85
 
 [node name="jump_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6w1l4")
-volume_db = -26.742
 pitch_scale = 1.4
 
 [node name="death_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_teysn")
-volume_db = -5.943
+volume_db = 15.0
 pitch_scale = 1.03
+
+[node name="Main Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5cq5h")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
 [connection signal="timeout" from="ShootBuffer" to="." method="_on_shoot_buffer_timeout"]

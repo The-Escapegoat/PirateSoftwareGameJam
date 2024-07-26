@@ -127,6 +127,7 @@ func handle_jump():
 	if is_on_floor() or coyotye_jump_timer.time_left > 0.0:		
 		if Input.is_action_just_pressed("Jump") or jump_buffered:
 			velocity.y = JUMP_VELOCITY
+			jump_sfx.pitch_scale = randf_range(1.0, 1.4)
 			jump_sfx.play()
 	if not is_on_floor():
 		if Input.is_action_just_released("Jump") and velocity.y < JUMP_VELOCITY/2 and !is_shooting:
@@ -148,7 +149,9 @@ func update_animations(input_axis):
 			
 		if (input_axis != 0):
 			animated_sprite_2d.play("run")
-			
+			if animated_sprite_2d.frame == 0 or animated_sprite_2d.frame == 4:
+				footsteps.pitch_scale = randf_range(1.0, 1.4)
+				footsteps.play()
 		else:
 			animated_sprite_2d.play("idle")
 		if not is_on_floor():
@@ -176,6 +179,7 @@ func death():
 	owner.deaths += 1
 	can_move = false
 	animated_sprite_2d.play("death")
+	death_sfx.pitch_scale = randf_range(1.0, 1.4)
 	death_sfx.play()
 	await animated_sprite_2d.animation_finished
 	self.global_position = current_checkpoint

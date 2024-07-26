@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bwekyllcq7efy"]
+[gd_scene load_steps=26 format=3 uid="uid://bwekyllcq7efy"]
 
 [ext_resource type="Script" path="res://Scripts/game_jam.gd" id="1_at4nd"]
 [ext_resource type="Texture2D" uid="uid://71mei6ds1bnm" path="res://Sprites/GameJam.png" id="1_eg2ra"]
+[ext_resource type="AudioStream" uid="uid://bvijaydshlp76" path="res://Audio/Jam.wav" id="3_dc32k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sit8u"]
 atlas = ExtResource("1_eg2ra")
@@ -171,5 +172,8 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_03r7j")
+
+[node name="Bing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dc32k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

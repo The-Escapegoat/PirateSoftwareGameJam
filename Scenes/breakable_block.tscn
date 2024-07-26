@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdxn6fbgcdu31"]
+[gd_scene load_steps=5 format=3 uid="uid://bdxn6fbgcdu31"]
 
 [ext_resource type="Script" path="res://Scripts/breakable_block.gd" id="1_cul2a"]
 [ext_resource type="Texture2D" uid="uid://d3p440uaxn8n2" path="res://Sprites/BreakBlock.png" id="1_ptf3o"]
+[ext_resource type="AudioStream" uid="uid://b8mamvrgvo2ae" path="res://Audio/Bolk.wav" id="3_ex4fj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg4n7"]
 size = Vector2(32, 32)
@@ -14,3 +15,6 @@ texture = ExtResource("1_ptf3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Bombable"]]
 shape = SubResource("RectangleShape2D_lg4n7")
+
+[node name="Bolk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ex4fj")
