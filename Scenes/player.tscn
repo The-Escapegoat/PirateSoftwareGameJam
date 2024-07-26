@@ -1,7 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://cnqjadjtimi1p"]
+[gd_scene load_steps=47 format=3 uid="uid://cnqjadjtimi1p"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8gny3"]
 [ext_resource type="Texture2D" uid="uid://b8q3g8xdwwjwv" path="res://Sprites/Player.png" id="2_4375n"]
+[ext_resource type="AudioStream" uid="uid://uqdlfvo2ypcx" path="res://Audio/Footsteps.wav" id="3_4chdr"]
+[ext_resource type="AudioStream" uid="uid://cuqhwwvvhv2t" path="res://Audio/Jump.wav" id="4_6w1l4"]
+[ext_resource type="AudioStream" uid="uid://bu1yxx7olj2tq" path="res://Audio/Death.wav" id="5_teysn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j761n"]
 size = Vector2(14, 28)
@@ -384,6 +387,21 @@ one_shot = true
 [node name="ShootBuffer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4chdr")
+volume_db = -14.857
+pitch_scale = 0.85
+
+[node name="jump_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6w1l4")
+volume_db = -26.742
+pitch_scale = 1.4
+
+[node name="death_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_teysn")
+volume_db = -5.943
+pitch_scale = 1.03
 
 [connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
 [connection signal="timeout" from="ShootBuffer" to="." method="_on_shoot_buffer_timeout"]

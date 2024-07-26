@@ -38,6 +38,9 @@ var can_shoot : bool = true
 @onready var coyotye_jump_timer = $CoyoteJumpTimer
 @onready var cooldown = $Cooldown
 @onready var bomb = preload("res://Scenes/bomb.tscn")
+@onready var footsteps = $footsteps
+@onready var jump_sfx = $jump_sfx
+@onready var death_sfx = $death_sfx
 
 @onready var jump_buffer_timer = $JumpBuffer
 @onready var shoot_buffer_timer = $ShootBuffer
@@ -67,6 +70,7 @@ func _physics_process(delta):
 		var was_on_floor = is_on_floor()
 		if (can_move):
 			move_and_slide()
+			
 		var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 		if just_left_ledge:
 			coyotye_jump_timer.start()
@@ -123,6 +127,7 @@ func handle_jump():
 	if is_on_floor() or coyotye_jump_timer.time_left > 0.0:		
 		if Input.is_action_just_pressed("Jump") or jump_buffered:
 			velocity.y = JUMP_VELOCITY
+			jump_sfx.play()
 	if not is_on_floor():
 		if Input.is_action_just_released("Jump") and velocity.y < JUMP_VELOCITY/2 and !is_shooting:
 			velocity.y = JUMP_VELOCITY/2
@@ -143,6 +148,7 @@ func update_animations(input_axis):
 			
 		if (input_axis != 0):
 			animated_sprite_2d.play("run")
+			footsteps.play()
 			
 		else:
 			animated_sprite_2d.play("idle")
@@ -171,6 +177,7 @@ func death():
 	owner.deaths += 1
 	can_move = false
 	animated_sprite_2d.play("death")
+	death_sfx.play()
 	await animated_sprite_2d.animation_finished
 	self.global_position = current_checkpoint
 	can_move = true
