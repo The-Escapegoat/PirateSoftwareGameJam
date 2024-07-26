@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://deguxpsm7p5mp"]
+[gd_scene load_steps=26 format=3 uid="uid://deguxpsm7p5mp"]
 
 [ext_resource type="PackedScene" uid="uid://cnqjadjtimi1p" path="res://Scenes/player.tscn" id="1_seww4"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tm3k2"]
@@ -25,6 +25,24 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5xc8"]
 size = Vector2(32, 32)
+
+[sub_resource type="Environment" id="Environment_efl2s"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.84
+glow_strength = 0.36
+glow_mix = 0.0
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 0.81
+glow_hdr_scale = 1.83
+glow_hdr_luminance_cap = 7.78
+glow_map_strength = 0.68
+adjustment_enabled = true
+adjustment_contrast = 1.08
+adjustment_saturation = 0.83
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_afobv"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_vm2xi")
@@ -240,12 +258,6 @@ texture = ExtResource("22_8m26n")
 hframes = 3
 frame = 2
 
-[node name="Props12" type="Sprite2D" parent="."]
-position = Vector2(1776, -240)
-texture = ExtResource("22_8m26n")
-hframes = 3
-frame = 1
-
 [node name="Props13" type="Sprite2D" parent="."]
 position = Vector2(2000, -352)
 texture = ExtResource("22_8m26n")
@@ -401,5 +413,9 @@ position = Vector2(-280, 48)
 texture = ExtResource("22_8m26n")
 hframes = 3
 frame = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_efl2s")
+camera_attributes = SubResource("CameraAttributesPhysical_afobv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
