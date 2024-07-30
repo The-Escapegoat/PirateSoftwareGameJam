@@ -115,9 +115,9 @@ polygon = PackedVector2Array(264, 56, 264, -248, -360, -248, -360, 56)
 [node name="CameraPoint" type="Marker2D" parent="."]
 position = Vector2(-48, -96)
 
-[connection signal="body_entered" from="TileMap/@Area2D@21566" to="TileMap/@Area2D@21566" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@21567" to="TileMap/@Area2D@21567" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@21568" to="TileMap/@Area2D@21568" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@21569" to="TileMap/@Area2D@21569" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@21570" to="TileMap/@Area2D@21570" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/Spike" to="TileMap/Spike" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19542" to="TileMap/@Area2D@19542" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19543" to="TileMap/@Area2D@19543" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19544" to="TileMap/@Area2D@19544" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19545" to="TileMap/@Area2D@19545" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

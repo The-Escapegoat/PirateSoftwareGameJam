@@ -5,7 +5,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const ACCELERATION = 1400.0
 const FRICTION = 2000.0
-const JUMP_VELOCITY = -350.0
+const JUMP_VELOCITY = -310.0
 
 @export var player_launch_amount = 300
 
