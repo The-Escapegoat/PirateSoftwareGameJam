@@ -4,8 +4,8 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const ACCELERATION = 1400.0
-const FRICTION = 1800.0
-const JUMP_VELOCITY = -300.0
+const FRICTION = 2000.0
+const JUMP_VELOCITY = -350.0
 
 @export var player_launch_amount = 300
 
@@ -165,6 +165,7 @@ func update_animations(input_axis):
 		is_shooting = false
 		
 func launch_player(direction : Vector2):
+	direction = -bomb_direction
 	velocity = direction * explosion_power
 
 
